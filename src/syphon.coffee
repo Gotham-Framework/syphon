@@ -40,7 +40,7 @@ class @Syphon
 
     # jQuery serialize don't take checkboxes not checked 
     # but we need it.
-    $('input[type=checkbox]:not(:checked)').each ->
+    $(selector).find('input[type=checkbox]:not(:checked)').each ->
 
       name = $(this).attr('name')
 
@@ -49,14 +49,13 @@ class @Syphon
         get[name] = false
 
     # Same for radios
-    $('input[type=radio]:not(:checked)').each ->
+    $(selector).find('input[type=radio]:not(:checked)').each ->
 
       name = $(this).attr('name')
 
       unless name of get 
 
         get[name] = false
-
 
     return get
 

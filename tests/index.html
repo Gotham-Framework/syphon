@@ -7,6 +7,9 @@
     <!-- Qunit -->
     <script src="../bower_components/qunit/qunit/qunit.js"></script>
     <link rel="stylesheet" type="text/css" href="../bower_components/qunit/qunit/qunit.css"> 
+    
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
 
     <!-- Syphon -->
     <script src="../dist/syphon.js"></script>
@@ -17,5 +20,34 @@
 </head>
 <body>
     <div id="qunit"></div>
+    <div id="qunit-fixture">
+        <form id="checkboxes-not-checked-false">
+            <input type="checkbox" name="vehicle" value="bike"> I have a bike<br>
+            <input type="checkbox" name="vehicle" value="car"> I have a car<br>
+        </form>
+
+        <form id="radios-not-checked-false">
+            <input type="radio" name="vehicle" value="bike"> I have a bike<br>
+            <input type="radio" name="vehicle" value="car"> I have a car<br>
+        </form>
+
+        <form id="all-html-basic-types">
+            <textarea name="textarea">textarea</textarea>
+            <input type="text" name="text" value="text"></textarea>
+            <input type="password" name="password" value="password" />
+            <input type="checkbox" name="checkbox" value="checkbox1" />
+            <input type="checkbox" name="checkbox" value="checkbox2" />
+            <input type="checkbox" name="checkbox" value="checkbox3" checked="checked" />
+            <input type="radio" name="radio" value="radio1">
+            <input type="radio" name="radio" value="radio2" checked="checked">
+            <input type="radio" name="radio" value="radio3">
+        </form>
+
+        <form id="extra-html5-types">
+            <input type="color" name="color" value="#000000">
+            <input type="range" name="range" min="0" max="10">
+
+        </form>
+    </div>
 </body>
 </html>

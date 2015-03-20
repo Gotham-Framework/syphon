@@ -11,14 +11,14 @@
         data = serialized[_i];
         get[data.name] = data.value;
       }
-      $('input[type=checkbox]:not(:checked)').each(function() {
+      $(selector).find('input[type=checkbox]:not(:checked)').each(function() {
         var name;
         name = $(this).attr('name');
         if (!(name in get)) {
           return get[name] = false;
         }
       });
-      $('input[type=radio]:not(:checked)').each(function() {
+      $(selector).find('input[type=radio]:not(:checked)').each(function() {
         var name;
         name = $(this).attr('name');
         if (!(name in get)) {
