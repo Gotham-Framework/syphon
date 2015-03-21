@@ -31,13 +31,16 @@ test("Can read all html basic types", 5, function() {
 
 });
 
-test("Can read extra html5 types", 2, function() {
+test("Can read extra html5 types", 4, function() {
 
   syphon = new Syphon();
   datas = syphon.get('#extra-html5-types');
 
   deepEqual(datas.color, '#000000');
   deepEqual(datas.range, '5');
+  deepEqual(datas.number, '4');
+  deepEqual(datas.date, '2015-03-03');
+
 
 });
 
