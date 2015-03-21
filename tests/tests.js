@@ -31,7 +31,7 @@ test("Can read all html basic types", 5, function() {
 
 });
 
-test("Can read extra html5 types", 5, function() {
+test("Can read extra html5 types", 6  , function() {
 
   syphon = new Syphon();
   datas = syphon.get('#extra-html5-types');
@@ -41,6 +41,7 @@ test("Can read extra html5 types", 5, function() {
   deepEqual(datas.number, '4');
   deepEqual(datas.date, '2015-03-03');
   deepEqual(datas.month, '2015-03');
+  deepEqual(datas.week, '2015-W10');
 
 });
 
