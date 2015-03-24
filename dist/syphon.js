@@ -9,7 +9,15 @@
       get = {};
       for (_i = 0, _len = serialized.length; _i < _len; _i++) {
         data = serialized[_i];
-        get[data.name] = data.value;
+        if (data.name in get) {
+          if (typeof get[data.name] === 'string') {
+            get[data.name] = [get[data.name], data.value];
+          } else {
+            get[data.name].push(data.value);
+          }
+        } else {
+          get[data.name] = data.value;
+        }
       }
       $(selector).find('input[type=checkbox]:not(:checked)').each(function() {
         var name;
@@ -25,39 +33,14 @@
           return get[name] = false;
         }
       });
+      $(selector).find("select[multiple]:not(:checked)").each(function() {
+        var name;
+        name = $(this).attr('name');
+        if (!(name in get)) {
+          return get[name] = false;
+        }
+      });
       return get;
-    };
-
-    Syphon.prototype.push = function(selector, datas) {
-
-      /*
-      for name, data of datas 
-      
-        $(selector).find('[name="' + name + '"]').each ->
-      
-          tag = $(this).prop('tagName').toLowerCase()
-      
-          if tag is 'textarea'
-      
-            $(this).val(data)
-      
-          else
-      
-            type = $(this).attr('type').toLowerCase()
-      
-            switch type
-              when 'text' then $(this).val(data)
-              when 'password' then $(this).val(data)
-              when 'date' then $(this).val(data)
-      
-      
-      
-      
-          #console.log $(this).prop('tagName')
-      
-      
-      return datas
-       */
     };
 
     return Syphon;

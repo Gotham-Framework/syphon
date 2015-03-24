@@ -31,7 +31,7 @@ test("Can read all html basic types", 5, function() {
 
 });
 
-test("Can read extra html5 types", 6  , function() {
+test("Can read extra html5 types", 7, function() {
 
   syphon = new Syphon();
   datas = syphon.get('#extra-html5-types');
@@ -42,6 +42,27 @@ test("Can read extra html5 types", 6  , function() {
   deepEqual(datas.date, '2015-03-03');
   deepEqual(datas.month, '2015-03');
   deepEqual(datas.week, '2015-W10');
+  deepEqual(datas.time, '23:01');
+
+});
+
+test("Select multiples with some values checked must return an array", 3, function() {
+
+  syphon = new Syphon();
+  datas = syphon.get('#select-multiples');
+
+  deepEqual(datas.cars[0], 'volvo');
+  deepEqual(datas.cars[1], 'saab');
+  deepEqual(datas.cars[2], 'opel');
+
+});
+
+test("Select multiples with no selected values must return false", 1, function() {
+
+  syphon = new Syphon();
+  datas = syphon.get('#select-multiples-no-selected');
+
+  deepEqual(datas.cars, false);
 
 });
 
