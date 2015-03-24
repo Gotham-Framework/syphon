@@ -11,15 +11,6 @@
 class @Syphon
 
   ##
-  # Constructor
-  #
-  # 
-  #
-  ##
-  constructor: ->
-
-
-  ##
   # Get
   #
   # Fetch datas from a from (selector jquery)
