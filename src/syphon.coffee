@@ -5,7 +5,7 @@
 # 
 # @author Ges Jeremie <http://www.gesjeremie.fr>
 # @copyright Copyright (c) 2014, Ges Jeremie
-# @since Version 1.0
+# @version 1.0
 #
 ##
 class @Syphon
