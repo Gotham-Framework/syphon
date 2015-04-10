@@ -66,5 +66,44 @@ test("Select multiples with no selected values must return false", 1, function()
 
 });
 
-// Test for nothing returns empty object
-// Test to check weird name inputs
+test("Don't find the form must return an empty object", 1, function() {
+
+  syphon = new Syphon();
+  datas = syphon.get('#this-selector-doesnt-exist');
+
+  deepEqual(datas, {});
+
+});
+
+module("Syphon exclude");
+
+test("Must exclude strong", 3, function() {
+
+  syphon = new Syphon();
+  datas = syphon.exclude(['strong']).get("#exclude-strong")
+
+  deepEqual(datas.lvl, "25");
+  deepEqual(datas.name, "Peter");
+  deepEqual(datas.strong, undefined);
+
+});
+
+test("Exclude without params must work", 1, function() {
+
+  syphon = new Syphon();
+  datas = syphon.exclude().get('#exclude-no-params');
+
+  deepEqual(datas.type, "zombie");
+
+});
+
+test("Arguments way must work too", 3, function() {
+
+  syphon = new Syphon();
+  datas = syphon.exclude('tweet', 'name').get('#arguments-way');
+
+  deepEqual(datas.shared, "yes");
+  deepEqual(datas.tweet, undefined);
+  deepEqual(datas.name, undefined);
+
+});
