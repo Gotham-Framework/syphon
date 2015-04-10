@@ -1,5 +1,6 @@
 {
   "name": "syphon",
+  "moduleType": "globals",
   "homepage": "https://github.com/Gotham-Framework/syphon",
   "authors": [
     "Ges Jeremie <bonjour@gesjeremie.fr>"
