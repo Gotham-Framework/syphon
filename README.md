@@ -101,7 +101,7 @@ Exclude some datas which will fetched by get.
 syphon = new Syphon();
 datas = syphon.exclude('awesomeness').get('form:first');
 datas = syphon.exclude('pretty', 'cool', 'syntax').get('form');
-datas = syphon.exclude(['as', 'an', 'array']').get('form');
+datas = syphon.exclude(['as', 'an', 'array']).get('form');
 ```
 
 ## How to compile source files 
