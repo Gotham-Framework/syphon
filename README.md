@@ -1,3 +1,5 @@
+![Logo](http://gesjeremie.fr/github_resources/syphon-component.png)
+
 ## Syphon
 
 Easily serialize forms into a JSON representation. Inspired from [Backbone.Syphon](https://github.com/marionettejs/backbone.syphon).
