@@ -26,6 +26,8 @@ Will become :
 bower install --save gotham-syphon
 ```
 
+Note: You need jQuery
+
 ## Examples
 
 ### Basic
